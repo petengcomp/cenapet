@@ -74,8 +74,11 @@ export default function Layout(props: LayoutProps){
 
     return (
 
-        <div className={ufes.className}>
-            {props.children}
+        <div className={`${ufes.className} flex flex-col items-center`}>
+
+            <div className="md:w-[90%] w-full">
+              {props.children}
+            </div>
         </div>
     )
 }

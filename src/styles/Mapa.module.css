@@ -1,0 +1,65 @@
+.norte {
+    fill: #D6D6D6;
+    cursor: pointer;
+  }
+  .nordeste {
+    fill: #86C88F;
+    cursor: pointer;
+  }
+  .centroOeste {
+    fill: #1A33F6;
+    cursor: pointer;
+  }
+  .sudeste {
+    fill: #606060;
+    cursor: pointer;
+  }
+  .sul {
+    fill: #FBD720;
+    cursor: pointer;
+  }
+
+.distritoFederal{
+    fill: #1da1f2;
+    stroke: white;
+    stroke-width: 1px;
+    cursor: pointer;
+}
+
+
+ .norte:hover {
+    fill: purple;
+    stroke: red;
+    stroke-width: 3px;
+    transition: fill 0.4s;
+  }
+ .nordeste:hover {
+    fill: purple;
+    stroke: red;
+    stroke-width: 3px;
+    transition: fill 0.4s;
+  }
+ .centroOeste:hover {
+    fill: purple;
+    stroke: red;
+    stroke-width: 3px;
+    transition: fill 0.4s;
+  }
+ .sudeste:hover {
+    fill: purple;
+    stroke: red;
+    stroke-width: 3px;
+    transition: fill 0.4s;
+  }
+ .sul:hover {
+    fill: purple;
+    stroke: red;
+    stroke-width: 3px;
+    transition: fill 0.4s;
+  }
+ .distritoFederal:hover {
+    fill: purple;
+    stroke: red;
+    stroke-width: 3px;
+    transition: fill 0.4s;
+  }
