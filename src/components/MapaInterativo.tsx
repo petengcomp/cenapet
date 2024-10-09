@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Mapa from "./Mapa";
+import Subtitulo from "./Subtitulo";
 
 export default function MapaInterativo(){
 
@@ -23,7 +24,7 @@ export default function MapaInterativo(){
                 <div className="bg-slate-200 p-5 w-[90%] lg:w-3/5 rounded-md">
 
                     <div className="flex flex-col items-center mt-5 mb-5">   
-                        <h1 className="text-4xl font-bold mb-10">{estado}</h1>
+                        <Subtitulo valor={estado}/>
 
                         <p> <span className="font-bold">13</span> GRUPOS PET</p>
                     </div>
