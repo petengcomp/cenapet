@@ -4,7 +4,7 @@ export default function Faq(){
 
     return(
 
-        <Layout paginaMarcada="faq">
+        <Layout paginaMarcada="faq" Titulo="FAQ">
             
         </Layout>
     )

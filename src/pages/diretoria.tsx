@@ -4,7 +4,7 @@ export default function Diretoria(){
 
     return(
 
-        <Layout paginaMarcada="diretoria">
+        <Layout paginaMarcada="diretoria" Titulo="Diretoria CENAPET">
             
         </Layout>
     )

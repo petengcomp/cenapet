@@ -4,7 +4,7 @@ export default function Eventos(){
 
     return(
 
-        <Layout paginaMarcada="eventos">
+        <Layout paginaMarcada="eventos" Titulo="Eventos PET">
             
         </Layout>
     )

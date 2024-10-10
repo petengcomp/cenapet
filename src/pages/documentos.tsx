@@ -4,7 +4,7 @@ export default function Documentos(){
 
     return(
 
-        <Layout paginaMarcada="documentos">
+        <Layout paginaMarcada="documentos" Titulo="Documentos">
             
         </Layout>
     )

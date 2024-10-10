@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
 
-    <Layout paginaMarcada="grupos">
+    <Layout paginaMarcada="grupos" Titulo="Grupos PET">
 
         <div className="p-8">
           <p>

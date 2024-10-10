@@ -4,7 +4,7 @@ export default function Home() {
 
   return (
 
-    <Layout paginaMarcada="inicio">
+    <Layout paginaMarcada="inicio" Titulo="CENAPET">
       TESTANDO
     </Layout>
   )
