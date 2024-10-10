@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
 
-    <Layout>
+    <Layout paginaMarcada="grupos">
 
         <div className="p-8">
           <p>

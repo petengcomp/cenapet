@@ -1,4 +1,5 @@
 import localFont from "next/font/local"
+import Menu from "./Menu"
 
 const ufes = localFont({
     src: [
@@ -68,6 +69,7 @@ const ufes = localFont({
 interface LayoutProps {
 
     children: any
+    paginaMarcada: string
 }
 
 export default function Layout(props: LayoutProps){
@@ -75,6 +77,8 @@ export default function Layout(props: LayoutProps){
     return (
 
         <div className={`${ufes.className} flex flex-col items-center`}>
+
+            <Menu paginaMarcada={props.paginaMarcada}/>
 
             <div className="md:w-[90%] w-full">
               {props.children}

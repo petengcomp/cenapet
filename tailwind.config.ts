@@ -14,7 +14,7 @@ const config: Config = {
       },
       animation: {
         'slide': 'slide 1.5s',
-        'flip': 'flip 1.5s'
+        'flip': 'flip 1s'
       },
       keyframes: {
         slide: {
