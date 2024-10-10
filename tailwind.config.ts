@@ -12,6 +12,20 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        'slide': 'slide 1.5s',
+        'flip': 'flip 1.5s'
+      },
+      keyframes: {
+        slide: {
+          'from': { transform: 'translateX(-25%)' },
+          'to': { transform: 'translateX(0)' }
+        },
+        flip: {
+          'from': { transform: 'rotate(0)' },
+          'to': { transform: 'rotateX(360deg)' }
+        }
+      }
     },
   },
   plugins: [],
