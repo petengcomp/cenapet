@@ -81,8 +81,8 @@ export default function Layout(props: LayoutProps){
         <div className={`${ufes.className} flex flex-col items-center`}>
 
             <Menu paginaMarcada={props.paginaMarcada}/>
-            <div className="md:w-[90%] w-full">
-            <Titulo valor={props.Titulo}/>
+            <div className="md:w-[90%] w-full ml-8">
+              <Titulo valor={props.Titulo}/>
               {props.children}
             </div>
         </div>
