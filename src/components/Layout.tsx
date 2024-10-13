@@ -1,6 +1,7 @@
 import localFont from "next/font/local"
 import Menu from "./Menu"
 import Titulo from "./Titulo"
+import Footer from "./Footer"
 
 const ufes = localFont({
     src: [
@@ -85,6 +86,7 @@ export default function Layout(props: LayoutProps){
               <Titulo valor={props.Titulo}/>
               {props.children}
             </div>
+            <Footer/>
         </div>
     )
 }
