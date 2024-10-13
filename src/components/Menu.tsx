@@ -75,10 +75,12 @@ export default function Menu(props: MenuProps){
 
             <div className="flex py-7 w-full md:w-[90%] justify-center m-auto">
                 <div className="flex-1 flex items-center pl-12">
-                    <img 
-                        src="logos/logo_cinza.png" alt="" 
-                        className="flex w-[111.75px] lg:w-[223.5px] h-[29.25px] lg:h-[58.5px]"
-                    />
+                    <Link href="/">
+                        <img 
+                            src="logos/logo_cinza.png" alt="" 
+                            className="flex w-[111.75px] lg:w-[223.5px] h-[29.25px] lg:h-[58.5px]"
+                        />
+                    </Link>
                 </div>
 
                 <div className="hidden flex-1 lg:flex items-center justify-end">

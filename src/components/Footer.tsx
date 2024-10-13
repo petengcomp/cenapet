@@ -1,6 +1,6 @@
 export default function Footer(){
     return(
-        <footer className="bg-[#606060] py-8 w-full">
+        <footer className="bg-[#606060] py-8 w-full mt-20">
             {/*computador*/}
             <div className="hidden md:flex justify-between py-8 h-[160px] w-[80%] mx-auto">
                 <div className="flex justify-start" >
