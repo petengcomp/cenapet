@@ -2,9 +2,9 @@ export default class DocumentoModel {
 
     #nome: string
     #href: string
-    #tipo: 'custeio' | 'legislacao' | 'portaria'
+    #tipo: 'custeio' | 'legislacao' | 'portaria' | 'estatuto'
 
-    constructor(nome: string, href: string, tipo: 'custeio' | 'legislacao' | 'portaria'){
+    constructor(nome: string, href: string, tipo: 'custeio' | 'legislacao' | 'portaria' | 'estatuto'){
 
         this.#nome = nome
         this.#href = href

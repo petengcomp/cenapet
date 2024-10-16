@@ -2,7 +2,7 @@ import Documento from "@/components/Documento";
 import Layout from "@/components/Layout";
 import Subtitulo from "@/components/Subtitulo";
 import DocumentoModel from "@/core/DocumentoModel";
-import { ListaDocumentos } from "@/core/Dados";
+import { listaDocumentos } from "@/core/Dados";
 
 export default function Documentos(){
 
@@ -11,13 +11,13 @@ export default function Documentos(){
         const lista = []
         var docs = []
 
-        for(let i = 0; i < (Math.ceil(ListaDocumentos.length / 4)); i++){
+        for(let i = 0; i < (Math.ceil(listaDocumentos.length / 4)); i++){
 
             for(let j = 0; j < 4; j++){
 
-                if(j + (4*i) >= ListaDocumentos.length) break
+                if(j + (4*i) >= listaDocumentos.length) break
 
-                const doc = ListaDocumentos[j + (4*i)]
+                const doc = listaDocumentos[j + (4*i)]
 
                 if(doc.tipo === tipo){
 

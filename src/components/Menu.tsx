@@ -53,7 +53,7 @@ export default function Menu(props: MenuProps){
                     list-none
                     p-5 text-sm lg:text-xl
                     animate-slide lg:animate-none
-                    ${pagina.value === props.paginaMarcada ? 'text-blue-500' : ''}
+                    ${pagina.value === props.paginaMarcada ? 'text-blue-500 underline' : ''}
                 `}>
 
 
