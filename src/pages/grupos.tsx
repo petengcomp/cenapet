@@ -15,7 +15,7 @@ export default function Home() {
           <hr className="h-0.5 bg-yellow-400 w-full mt-10"/>
         </div>
 
-        <div>
+        <div className="mt-10">
             <MapaInterativo/>
         </div>
     </Layout>
