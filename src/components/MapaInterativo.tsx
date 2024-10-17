@@ -51,7 +51,10 @@ export default function MapaInterativo(){
         const response = await fetch("api/grupospet");
         const data: any[] = await response.json();
 
-        console.log(data)
+        for(let j = 0; j < listaEstados.length; j++){
+
+            listaEstados[j].resetaGrupos()
+        }
     
         for(let i = 0; i < data.length; i++){
 

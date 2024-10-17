@@ -17,6 +17,10 @@ export default class EstadoModel {
         return new EstadoModel('Clique em um estado', 'cl', [])
     }
 
+    resetaGrupos(){
+        this.#grupos = []
+    }
+
     adicionaGrupo(grupo: GrupoPetModel){
         this.#grupos.push(grupo)
     }
