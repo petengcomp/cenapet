@@ -57,7 +57,7 @@ export default function MapaInterativo(){
 
             const item = data[i]
 
-            const grupo = new GrupoPetModel(item.nome, '', item.ies);
+            const grupo = new GrupoPetModel(item.nome, item.link ? item.link : '', item.ies);
 
             for(let j = 0; j < listaEstados.length; j++){
 
