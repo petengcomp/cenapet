@@ -5,7 +5,7 @@ export default async function Grupospet(req, res){
 
     const serviceAccountAuth = new JWT({
         email: process.env.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        key: process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY,
+        key: process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
         scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     }) 
 
