@@ -2,11 +2,13 @@ export default class GrupoPetModel {
 
     #nome: string
     #link: string
+    #ies: string
 
-    constructor(nome: string, link: string){
+    constructor(nome: string, link: string, ies: string){
 
         this.#nome = nome
         this.#link = link
+        this.#ies = ies
     }
 
     get nome(){
@@ -15,5 +17,9 @@ export default class GrupoPetModel {
 
     get link(){
         return this.#link
+    }
+
+    get ies(){
+        return this.#ies
     }
 }

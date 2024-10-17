@@ -4,34 +4,60 @@ import Subtitulo from "./Subtitulo";
 import EstadoModel from "@/core/EstadoModel";
 import { listaEstados } from "@/core/Dados";
 import GrupoPetModel from "@/core/GrupoPetModel";
+import Universidade from "./Universidade";
 
 export default function MapaInterativo(){
 
     const [estado, setEstado] = useState(EstadoModel.vazio())
+    const [universidades, setUniversidades] = useState<string[]>([])
     const hasFetchedData = useRef(false)
 
     function selecionaEstado(estado: EstadoModel){
         setEstado(estado)
+
+        const universidadesEstado: string[] = []
+        estado.grupos.map(est => {
+
+            if(!universidadesEstado.includes(est.ies)){
+                universidadesEstado.push(est.ies)
+            }
+        })
+
+        setUniversidades(universidadesEstado)
     }
 
-    function renderizaGrupos(){
+    function renderizaUniversidades(){
 
-        return estado.grupos.map(grupo => {
-            return (
-                <li>{grupo.nome}</li>
-            )
-        })
+        const listaUniversidades = []
+
+        for(let i = 0; i < universidades.length; i++){
+
+            const ies = universidades[i];
+
+            const gruposUniversidade: GrupoPetModel[] = []
+            
+            estado.grupos.map(grupo => {
+
+                if(grupo.ies === ies) gruposUniversidade.push(grupo)
+            })
+
+            listaUniversidades.push(<Universidade nome={ies} grupos={gruposUniversidade}/>)
+        }
+
+        return listaUniversidades
     }
 
     async function getData() {
-        const response = await fetch("https://api.zerosheets.com/v1/mgu");
+        const response = await fetch("api/grupospet");
         const data: any[] = await response.json();
+
+        console.log(data)
     
         for(let i = 0; i < data.length; i++){
 
             const item = data[i]
 
-            const grupo = new GrupoPetModel(item.nome, '');
+            const grupo = new GrupoPetModel(item.nome, '', item.ies);
 
             for(let j = 0; j < listaEstados.length; j++){
 
@@ -67,12 +93,14 @@ export default function MapaInterativo(){
                     <div className="flex flex-col items-center mt-5 mb-5">   
                         <Subtitulo valor={estado.nome}/>
 
-                        <p> <span className="font-bold">{estado.grupos.length}</span> GRUPOS PET</p>
+                        <p> <span className="font-bold text-3xl">{estado.grupos.length}</span> GRUPOS PET</p>
+                        <p> <span className="font-bold text-3xl">{universidades.length}
+                        </span>{universidades.length === 1 ? ' UNIVERSIDADE' : ' UNIVERSIDADES'}</p>
                     </div>
 
-                    <ul className="flex flex-col justify-start w-full list-disc ml-6">
-                        {renderizaGrupos()}
-                    </ul>
+                    <div className="flex flex-col justify-start w-full">
+                        {renderizaUniversidades()}
+                    </div>
                 </div>
                 
             </div>
