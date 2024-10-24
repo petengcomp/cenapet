@@ -1,35 +1,46 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from 'google-auth-library';
 
-export default async function Grupospet(req, res){
+let cachedGrupos = null;
+let lastFetchTime = 0;
+const FETCH_INTERVAL = 5 * 60 * 1000; // 5 minutos (em milissegundos)
 
-    const serviceAccountAuth = new JWT({
-        email: process.env.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        key: process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-    }) 
+async function fetchDataFromSpreadsheet() {
+  const serviceAccountAuth = new JWT({
+    email: process.env.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    key: process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+  });
 
-    const doc = new GoogleSpreadsheet('1QG9Pkw-Ms6D7QLlWymoHcDKc9-cxUKA5tB3HyLrjAJ8', serviceAccountAuth)
+  const doc = new GoogleSpreadsheet('1QG9Pkw-Ms6D7QLlWymoHcDKc9-cxUKA5tB3HyLrjAJ8', serviceAccountAuth);
 
-    await doc.loadInfo()
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[0];
+  const rows = await sheet.getRows();
 
-    const sheet = doc.sheetsByIndex[0]
-    const rows = await sheet.getRows()
+  const grupos = rows.map(row => ({
+    nome: row.get('nome'),
+    uf: row.get('uf'),
+    ies: row.get('ies'),
+    link: row.get('link')
+  }));
 
-    const grupos = rows.map(row => {
+  cachedGrupos = grupos;
+  lastFetchTime = Date.now(); // Atualiza o tempo da última atualização
+  console.log("Dados atualizados da planilha");
+}
 
-        const nome = row.get('nome')
-        const uf = row.get('uf')
-        const ies = row.get('ies')
-        const link = row.get('link')
+// Inicia a primeira atualização assim que o servidor começa
+fetchDataFromSpreadsheet();
 
-        return{
-            nome,
-            uf,
-            ies,
-            link
-        }
-    })
+// Configura o pooling para atualizar os dados a cada intervalo
+setInterval(fetchDataFromSpreadsheet, FETCH_INTERVAL);
 
-    res.send(grupos)
+export default function Grupospet(req, res) {
+  // Verifica se o cache está vazio ou muito antigo
+  if (!cachedGrupos || Date.now() - lastFetchTime > FETCH_INTERVAL) {
+    res.status(503).send({ error: 'Dados ainda não estão prontos, tente novamente mais tarde.' });
+  } else {
+    res.send(cachedGrupos);
+  }
 }
