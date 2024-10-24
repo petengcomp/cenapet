@@ -2,7 +2,6 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from 'google-auth-library';
 
 let cachedGrupos = null;
-let lastFetchTime = 0;
 const FETCH_INTERVAL = 5 * 60 * 1000; // 5 minutos (em milissegundos)
 
 async function fetchDataFromSpreadsheet() {
@@ -26,19 +25,17 @@ async function fetchDataFromSpreadsheet() {
   }));
 
   cachedGrupos = grupos;
-  lastFetchTime = Date.now(); // Atualiza o tempo da última atualização
   console.log("Dados atualizados da planilha");
 }
 
 // Inicia a primeira atualização assim que o servidor começa
 fetchDataFromSpreadsheet();
 
-// Configura o pooling para atualizar os dados a cada intervalo
 setInterval(fetchDataFromSpreadsheet, FETCH_INTERVAL);
 
 export default function Grupospet(req, res) {
-  // Verifica se o cache está vazio ou muito antigo
-  if (!cachedGrupos || Date.now() - lastFetchTime > FETCH_INTERVAL) {
+  
+  if (!cachedGrupos) {
     res.status(503).send({ error: 'Dados ainda não estão prontos, tente novamente mais tarde.' });
   } else {
     res.send(cachedGrupos);
