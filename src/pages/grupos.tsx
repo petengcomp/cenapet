@@ -1,7 +1,20 @@
 import Layout from "@/components/Layout";
 import MapaInterativo from "@/components/MapaInterativo";
 
-export default function Home() {
+export async function getStaticProps(){
+
+  const response = await fetch("https://cenapet.vercel.app/api/grupospet");
+  const grupos: any[] = await response.json();
+
+  return{
+    props:{
+      grupos
+    },
+    revalidate: 300
+  }
+}
+
+export default function Grupos(props: any) {
 
   return (
 
@@ -16,7 +29,7 @@ export default function Home() {
         </div>
 
         <div className="mt-10">
-            <MapaInterativo/>
+            <MapaInterativo grupos={props.grupos}/>
         </div>
     </Layout>
   )

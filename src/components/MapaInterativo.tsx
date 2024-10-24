@@ -6,7 +6,11 @@ import { listaEstados } from "@/core/Dados";
 import GrupoPetModel from "@/core/GrupoPetModel";
 import Universidade from "./Universidade";
 
-export default function MapaInterativo(){
+interface MapaInterativoProps{
+    grupos: any
+}
+
+export default function MapaInterativo(props: MapaInterativoProps){
 
     const [estado, setEstado] = useState(EstadoModel.vazio())
     const [universidades, setUniversidades] = useState<string[]>([])
@@ -47,18 +51,16 @@ export default function MapaInterativo(){
         return listaUniversidades
     }
 
-    async function getData() {
-        const response = await fetch("api/grupospet");
-        const data: any[] = await response.json();
+    function obtemGruposPorEstado() {
 
         for(let j = 0; j < listaEstados.length; j++){
 
             listaEstados[j].resetaGrupos()
         }
     
-        for(let i = 0; i < data.length; i++){
+        for(let i = 0; i < props.grupos.length; i++){
 
-            const item = data[i]
+            const item = props.grupos[i]
 
             const grupo = new GrupoPetModel(item.nome, item.link ? item.link : '', item.ies);
 
@@ -75,8 +77,8 @@ export default function MapaInterativo(){
 
     useEffect(() => {
         if (!hasFetchedData.current) {
-            getData();
-            hasFetchedData.current = true;
+            obtemGruposPorEstado()
+            hasFetchedData.current = true
         }
     }, [])
 
