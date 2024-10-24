@@ -15,6 +15,7 @@ export default function MapaInterativo(props: MapaInterativoProps){
     const [estado, setEstado] = useState(EstadoModel.vazio())
     const [universidades, setUniversidades] = useState<string[]>([])
     const hasFetchedData = useRef(false)
+    const componenteRef = useRef<null | HTMLDivElement>(null)
 
     function selecionaEstado(estado: EstadoModel){
         setEstado(estado)
@@ -28,6 +29,10 @@ export default function MapaInterativo(props: MapaInterativoProps){
         })
 
         setUniversidades(universidadesEstado)
+
+        if (componenteRef.current) {
+            componenteRef.current.scrollIntoView({ behavior: 'smooth' })
+        }
     }
 
     function renderizaUniversidades(){
@@ -45,7 +50,7 @@ export default function MapaInterativo(props: MapaInterativoProps){
                 if(grupo.ies === ies) gruposUniversidade.push(grupo)
             })
 
-            listaUniversidades.push(<Universidade nome={ies} grupos={gruposUniversidade}/>)
+            listaUniversidades.push(<Universidade key={ies} nome={ies} grupos={gruposUniversidade}/>)
         }
 
         return listaUniversidades
@@ -91,7 +96,7 @@ export default function MapaInterativo(props: MapaInterativoProps){
                 <Mapa selecionaEstado={selecionaEstado}/>
             </div>
             
-            <div className="flex-1 flex flex-col items-center justify-center">
+            <div ref={componenteRef} className="flex-1 flex flex-col items-center justify-center">
 
                 <div className="bg-slate-200 p-5 w-[90%] lg:w-3/5 rounded-md">
 

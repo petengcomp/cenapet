@@ -18,7 +18,7 @@ export default function Universidade(props: UniversidadeProps){
 
             return (
 
-                <Link href={grupo.link} target={`${grupo.link != '' ? 'blank' : ''}`}>
+                <Link key={grupo.nome} href={grupo.link} target={`${grupo.link != '' ? 'blank' : ''}`}>
                     <li className="hover:text-blue-500 ml-2" key={grupo.nome}>{grupo.nome}</li>
                 </Link>
             )
