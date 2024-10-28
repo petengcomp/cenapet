@@ -96,9 +96,9 @@ export default function MapaInterativo(props: MapaInterativoProps){
                 <Mapa selecionaEstado={selecionaEstado}/>
             </div>
             
-            <div ref={componenteRef} className="flex-1 flex flex-col items-center justify-center">
+            <div ref={componenteRef} className="flex-1 flex flex-col pt-20 items-center justify-center">
 
-                <div className="bg-slate-200 p-5 w-[90%] lg:w-3/5 rounded-md">
+                <div className="bg-slate-200 p-5 w-[90%] lg:w-3/5 rounded-md lg:h-[600px] lg:overflow-y-scroll transition-all">
 
                     <div className="flex flex-col items-center mt-5 mb-5">   
                         <Subtitulo valor={estado.nome}/>
