@@ -30,7 +30,7 @@ export default function MapaInterativo(props: MapaInterativoProps){
 
         setUniversidades(universidadesEstado)
 
-        if (componenteRef.current) {
+        if (componenteRef.current && window.innerWidth < 1024) {
             componenteRef.current.scrollIntoView({ behavior: 'smooth' })
         }
     }
@@ -96,7 +96,7 @@ export default function MapaInterativo(props: MapaInterativoProps){
                 <Mapa selecionaEstado={selecionaEstado}/>
             </div>
             
-            <div ref={componenteRef} className="flex-1 flex flex-col pt-20 items-center justify-center">
+            <div ref={componenteRef} className="flex-1 flex flex-col items-center justify-center pt-20 lg:pt-0">
 
                 <div className="bg-slate-200 p-5 w-[90%] lg:w-3/5 rounded-md lg:h-[600px] lg:overflow-y-scroll transition-all">
 
