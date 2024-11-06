@@ -1,7 +1,8 @@
 import Documento from "@/components/Documento";
 import Layout from "@/components/Layout";
+import Membro from "@/components/Membro";
 import Subtitulo from "@/components/Subtitulo";
-import { docsDiretoria } from "@/core/Dados";
+import { docsDiretoria, membrosAtuais } from "@/core/Dados";
 
 export default function Diretoria(){
 
@@ -23,6 +24,17 @@ export default function Diretoria(){
             <hr className='h-0.5 bg-yellow-400 w-full my-10'/>
 
             <Subtitulo valor="Membros"/>
+
+            <div className="flex flex-wrap justify-center w-full">
+                {
+                    membrosAtuais.map(membro => {
+
+                        return (
+                            <Membro key={membro.nome} valor={membro}/>
+                        )
+                    })
+                }
+            </div>
 
             <hr className="h-0.5 bg-yellow-400 w-full my-10"/>
             <Subtitulo valor="Documentos"/>
