@@ -56,14 +56,14 @@ export default function Faq(props: any){
 
                     <h1 className="text-xl font-bold mb-4">Selecione uma categoria</h1>
 
-                    <div className="flex flex-col gap-3 text-lg">
+                    <div className="flex flex-col items-center gap-3 text-lg">
 
                         {
                                 
                             categorias.map(categoria => (
 
                                 <button className={`
-                                    hover:scale-105 duration-500
+                                    hover:scale-105 duration-200 w-max
                                     ${selecionada === categoria ? 'border-b-2 border-blue-500' : ''}
                                 `} key={categoria} onClick={() => setSelecionada(categoria)}>
                                     {categoria}

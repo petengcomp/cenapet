@@ -2,62 +2,6 @@ import DocumentoModel from "@/core/DocumentoModel";
 import EstadoModel from "./EstadoModel";
 import MembroModel from "./MembroModel";
 
-export const listaDocumentos = [
-
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-    new DocumentoModel(
-        'Manual de orientações sobre o custeio PET',
-        'docs/custeio/1 MANUAL DE ORIENTAÇÕES SOBRE O CUSTEIO PET.pdf',
-    ),
-]
-
 export const docsDiretoria = [
 
     new DocumentoModel(
