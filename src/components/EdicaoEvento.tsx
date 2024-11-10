@@ -4,12 +4,12 @@ import EventoModel from "@/core/EventoModel";
 import Documento from "./Documento";
 import DocumentoModel from "@/core/DocumentoModel";
 
-interface PerguntaFaqProps{
+interface EdicaoEventoProps{
 
     valor: EventoModel
 }
 
-export default function PerguntaFaq({ valor }: PerguntaFaqProps){
+export default function EdicaoEvento({ valor }: EdicaoEventoProps){
 
     const [open, setOpen] = useState(false);
 
