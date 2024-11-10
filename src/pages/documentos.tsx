@@ -1,6 +1,5 @@
 import Documento from "@/components/Documento";
 import Layout from "@/components/Layout";
-import Subtitulo from "@/components/Subtitulo";
 import DocumentoModel from "@/core/DocumentoModel";
 import { useEffect, useState } from "react";
 
