@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import Membro from "@/components/Membro";
 import Subtitulo from "@/components/Subtitulo";
 import { docsDiretoria, membrosAtuais } from "@/core/Dados";
+import Link from "next/link";
 
 export default function Diretoria(){
 
@@ -22,6 +23,12 @@ export default function Diretoria(){
             </p>
 
             <hr className='h-0.5 bg-yellow-400 w-full my-10'/>
+            
+            <Link target="blank" href="https://docs.google.com/presentation/d/1PQOVTTUsr8bTBi32doKB2NM5kM-1JP_C/edit?usp=sharing&ouid=111027957601787929675&rtpof=true&sd=true">
+                <button className="mb-7 p-5 rounded-md bg-blue-500/65 text-lg font-bold hover:bg-blue-300/65 duration-300">
+                    Histórico da Diretoria
+                </button>
+            </Link>
 
             <Subtitulo valor="Membros"/>
 

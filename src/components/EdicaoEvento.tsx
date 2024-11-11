@@ -15,7 +15,7 @@ export default function EdicaoEvento({ valor }: EdicaoEventoProps){
 
     return (
 
-        <div className="w-full md:w-[80%] border-yellow-400 border-b-2">
+        <div className="w-full border-yellow-400 border-b-2">
 
             <div
                 className="flex relative hover:cursor-pointer"
@@ -32,7 +32,7 @@ export default function EdicaoEvento({ valor }: EdicaoEventoProps){
 
             <div className={`${open ? "" : "hidden"} animate__animated animate__fadeInDown flex flex-col`}>
                 <h2 className="p-4 text-zinc-700">Local: {valor.local}</h2>
-                <h2 className="p-4 text-zinc-700">Data: {valor.data}</h2>
+                <h2 className="p-4 text-zinc-700 mb-2">Data: {valor.data}</h2>
                 <Documento valor={new DocumentoModel('Ata do Evento', valor.ata)}/>
             </div>
         </div>

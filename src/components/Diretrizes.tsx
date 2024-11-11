@@ -78,7 +78,7 @@ export default function Diretrizes({ docs }: DiretrizesProps){
                 {
                     docs.map((documento: DocumentoModel) => (
 
-                        <Documento valor={documento}/>
+                        <Documento key={documento.nome} valor={documento}/>
                     ))
                 }
             </div>

@@ -66,15 +66,15 @@ export default function Eventos(props: any){
 
             <hr className="h-0.5 bg-yellow-400 w-full my-10"/>
 
-            <div className="flex items-center text-2xl justify-center w-max mx-auto my-10">
+            <div className="flex items-center text-xl md:text-2xl justify-center w-max mx-auto my-10">
 
                 {
                         
                     paginas.map(pagina => (
 
                         <button className={`
-                            p-5
-                            ${selecionada === pagina ? 'border-b-2 border-blue-500' : ''}
+                            p-5 font-semibold duration-200
+                            ${selecionada === pagina ? 'border-b-2 border-blue-500' : 'text-zinc-500'}
                         `} key={pagina} onClick={() => setSelecionada(pagina)}>
                             {pagina}
                         </button>

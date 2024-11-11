@@ -11,7 +11,7 @@ export default function Enapet({ edicoes }: EnapetProps){
 
     return (
 
-        <div className="w-full md:w-[80%]">
+        <div className="w-full">
 
             <Subtitulo valor="Edições"/>
 
@@ -21,7 +21,7 @@ export default function Enapet({ edicoes }: EnapetProps){
                     edicoes.map(edicao => {
 
                         return (
-                            <EdicaoEvento valor={edicao}/>
+                            <EdicaoEvento key={edicao.edicao} valor={edicao}/>
                         )
                     })
                 }
