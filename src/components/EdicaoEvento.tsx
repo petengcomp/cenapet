@@ -3,6 +3,7 @@ import { IconeSeta, IconeSetaBaixo } from "./Icones";
 import EventoModel from "@/core/EventoModel";
 import Documento from "./Documento";
 import DocumentoModel from "@/core/DocumentoModel";
+import { span } from "framer-motion/client";
 
 interface EdicaoEventoProps{
 
@@ -32,8 +33,12 @@ export default function EdicaoEvento({ valor }: EdicaoEventoProps){
 
             <div className={`${open ? "" : "hidden"} animate__animated animate__fadeInDown flex flex-col`}>
                 <h2 className="p-4 text-zinc-700">Local: {valor.local}</h2>
-                <h2 className="p-4 text-zinc-700 mb-2">Data: {valor.data}</h2>
-                <Documento valor={new DocumentoModel('Ata do Evento', valor.ata)}/>
+                <h2 className={`p-4 text-zinc-700 ${valor.ata !=  null ? 'mb-2' : ''}`}>Data: {valor.data}</h2>
+                {
+                    valor.ata != null ?
+                    <Documento valor={new DocumentoModel('Ata do Evento', valor.ata)}/>
+                    : <span className="p-4 text-zinc-700">Ata ainda não disponível</span>
+                }
             </div>
         </div>
     )

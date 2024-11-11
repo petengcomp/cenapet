@@ -52,7 +52,7 @@ export default function Eventos(props: any){
 
             const itemEnapet = props.edicoesEnapet[i]
 
-            const elementoEnapet = new EventoModel(itemEnapet.edicao, itemEnapet.local, itemEnapet.data, itemEnapet.ata);
+            const elementoEnapet = new EventoModel(itemEnapet.edicao, itemEnapet.local, itemEnapet.data, itemEnapet.ata ? itemEnapet.ata : null);
             listaModelEnapet.push(elementoEnapet)
         }
         setListaEdicoesEnapet(listaModelEnapet)

@@ -3,9 +3,9 @@ export default class EventoModel {
     #edicao: string
     #local: string
     #data: string
-    #ata: string
+    #ata?: string
 
-    constructor(edicao: string, local: string, data: string, ata: string){
+    constructor(edicao: string, local: string, data: string, ata?: string){
 
         this.#edicao = edicao
         this.#local = local
