@@ -20,7 +20,6 @@ export default function Membro({valor}: MembroProps){
             <div className="flex flex-col justify-center items-center text-lg sm:text-xl">
                 <span>{valor.cargo}</span>
                 <span>{valor.grupo} - {valor.ies}</span>
-                <span>Membro desde {valor.dataEntrada}</span>
             </div>
         </div>
     )
