@@ -2,23 +2,41 @@ import Documento from "@/components/Documento";
 import Layout from "@/components/Layout";
 import Membro from "@/components/Membro";
 import Subtitulo from "@/components/Subtitulo";
-import { docsDiretoria, membrosAtuais } from "@/core/Dados";
+import { docsDiretoria } from "@/core/Dados";
+import MembroModel from "@/core/MembroModel";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-// export async function getStaticProps(){
+export async function getStaticProps(){
 
-//     const response = await fetch("https://cenapet.vercel.app/api/membros");
-//     const membros: any[] = await response.json();
+    const response = await fetch("https://cenapet.vercel.app/api/membros");
+    const membros: any[] = await response.json();
   
-//     return{
-//       props:{
-//         membros
-//       },
-//       revalidate: 300
-//     }
-// }
+    return{
+      props:{
+        membros
+      },
+      revalidate: 300
+    }
+}
 
 export default function Diretoria(props: any){
+
+    const [membrosAtuais, setMembrosAtuais] = useState<MembroModel[]>([])
+
+    useEffect(() => {
+
+        const listaModel: MembroModel[] = []
+
+        for(let i = 0; i < props.membros.length; i++){
+
+            const item = props.membros[i]
+
+            const elemento = new MembroModel(item.nome, item.cargo, item.grupo, item.ies);
+            listaModel.push(elemento)
+        }
+        setMembrosAtuais(listaModel)
+    }, [])
 
     function renderizaDocs(){
 

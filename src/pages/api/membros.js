@@ -16,13 +16,11 @@ export default async function FaqAPI(req, res){
       const cargo = row.get('cargo')
       const grupo = row.get('grupo')
       const ies = row.get('ies')
-      const foto = row.get('foto')
       return{
           nome,
           cargo,
           grupo,
-          ies,
-          foto
+          ies
       }
   })
   res.send(membros)
