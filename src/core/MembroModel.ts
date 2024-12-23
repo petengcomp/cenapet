@@ -2,17 +2,17 @@ export default class MembroModel {
 
     #nome: string
     #cargo: string
-    #dataEntrada: string
     #grupo: string
     #ies: string
+    #foto?: string
 
-    constructor(nome: string, cargo: string, dataEntrada: string, grupo: string, ies: string){
+    constructor(nome: string, cargo: string, grupo: string, ies: string, foto?: string){
 
         this.#nome = nome
         this.#cargo = cargo
-        this.#dataEntrada = dataEntrada
         this.#grupo = grupo
         this.#ies = ies
+        this.#foto = foto
     }
 
     get nome(){
@@ -23,8 +23,8 @@ export default class MembroModel {
         return this.#cargo
     }
 
-    get dataEntrada(){
-        return this.#dataEntrada
+    get foto(){
+        return this.#foto
     }
 
     get grupo(){
