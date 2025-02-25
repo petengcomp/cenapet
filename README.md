@@ -26,13 +26,13 @@ Os documentos e as informações do site estão guardadas em um drive, cujo aces
 
 ## Orientações para alterações nas planilhas
 
-Com o acesso ao drive da diretoria do Cenapet, é possível adicionar documentos, novos grupos PET, atualizar os membros da diretoria e adicionar perguntas ao FAQ, por meio da alteração das planilhas, localizadas em ./Base de Dados. Segue as orientações para alterações de cada planilha.
+Com o acesso ao drive da diretoria do Cenapet, é possível adicionar documentos, novos grupos PET, atualizar os membros da diretoria e adicionar perguntas ao FAQ, por meio da alteração das planilhas, localizadas no drive em ./Base de Dados. Segue as orientações para alterações de cada planilha.
 
 - Grupos
   - Não deixar os campos nome, uf e ies vazios;
   - Escrever a sigla do Estado conforme o padrão adotado na planilha (Ex.: ES, RJ, BA, etc.);
   - O nome da universidade deve ser escrito da mesma forma que já está na planilha, caso ela já esteja presente;
-  - Se a universidade for "Ufes", será reconhecida como mesma universidade "UFES", "ufes", "UfEs", etc. Porém não será recongecido "Universidade Federal do Espírito Santo". Mantenha a sigla.
+  - Se a universidade for "Ufes", será reconhecida como mesma universidade "UFES", "ufes", "UfEs", etc. Porém não será reconhecido "Universidade Federal do Espírito Santo". Mantenha a sigla.
 - FAQ
   - Não deixe campos vazios;
   - Mesmas categorias devem ser escritas da mesma forma;
